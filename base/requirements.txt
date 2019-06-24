@@ -1,0 +1,16 @@
+Django
+PyMySQL
+mysqlclient
+psycopg2
+psycopg2-binary
+djangorestframework
+django-filter
+djangorestframework-jwt
+django-environ
+django-debug-toolbar
+django-crispy-forms
+django-bootstrap4
+markdown
+pdfrw
+reportlab
+pyyaml

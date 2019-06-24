@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  # https://hub.docker.com/r/mysql/mysql-server/
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - "sanshin_data:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_PASSWORD: hogemojahogemoja
+
+  web:
+    image: django:latest
+    command: bash -c "python manage.py migrate && python ./manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./src:/opt/apps
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  sanshin_data:
+    external: true
